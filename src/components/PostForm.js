@@ -7,23 +7,23 @@ export const PostForm = () => {
   const dispatch = useDispatch()
 
   const [title, setTitle] = useState('')
-  const [content, setContent] = useState('')
+  const [body, setBody] = useState('')
 
   const onChangeTitle = (e) => {
     setTitle(e.target.value)
   }
 
   const onChangeContent = (e) => {
-    setContent(e.target.value)
+    setBody(e.target.value)
   } 
 
   const onAddPost = () => {
-    if (title && content) {
+    if (title && body) {
       dispatch(
-        addNewPost(title, content)
+        addNewPost(title, body)
       )
       setTitle('')
-      setContent('')
+      setBody('')
   }
   }
 
@@ -34,7 +34,7 @@ export const PostForm = () => {
         <label htmlFor="postTitle">Post Title:</label>
         <input type="text" id="postTitle" name="postTitle" value={title} onChange={onChangeTitle} />
         <label htmlFor="postContent">Content:</label>
-        <textarea id="postContent" name="postContent" value={content} onChange={onChangeContent} />
+        <textarea id="postContent" name="postContent" value={body} onChange={onChangeContent} />
         <button type="button" onClick={onAddPost}>Save Post</button>
       </form>
     </section>
