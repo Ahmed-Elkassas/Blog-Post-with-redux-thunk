@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { fetchPosts, getAllPosts, getPostsError, getPostsStatus } from "../redux/reducers/posts-slice"
+import { TimeAgo } from "./TimeAgo";
 
 export const PostsList = () => {
 
@@ -15,21 +16,22 @@ export const PostsList = () => {
     if(postStatus === 'idle') dispatch(fetchPosts())
      
     }, [postStatus, dispatch])
-    
-    const renderedPosts = posts.map((post) => {
-        return (
-            <article key={post.id}>
-                <h4>{post.title}</h4>
-                <p>{post.body.substring(0, 100)}</p>
-            </article>
-        )
-    })
+
 
     let content;
     if(postStatus === 'loading') {
         content = <p>Loading...</p>
     } else if(postStatus === 'succeeded') {
-        content = renderedPosts
+        const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
+        content = orderedPosts.map((post) => {
+            return (
+                <article key={post.id}>
+                    <h4>{post.title}</h4>
+                    <p>{post.body.substring(0, 100)}</p>
+                    <TimeAgo timestamp={post.date} />
+                </article>
+            )
+        })
     } else if(postStatus === 'failed') {
         content = <p>{error}</p>
     }
