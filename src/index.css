@@ -60,3 +60,12 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+.postDetails  {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.postDetails span {
+  font-size: 1.2rem;
+}

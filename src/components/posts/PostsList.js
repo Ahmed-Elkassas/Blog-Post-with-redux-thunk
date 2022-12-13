@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { fetchPosts, getAllPosts, getPostsError, getPostsStatus } from "../redux/reducers/posts-slice"
-import { TimeAgo } from "./TimeAgo";
+import { fetchPosts, getAllPosts, getPostsError, getPostsStatus } from "../../redux/reducers/posts-slice"
+import { TimeAgo } from "../TimeAgo";
+import { PostAuthor } from "../users/PostAuthor";
 
 export const PostsList = () => {
 
@@ -28,7 +29,10 @@ export const PostsList = () => {
                 <article key={post.id}>
                     <h4>{post.title}</h4>
                     <p>{post.body.substring(0, 100)}</p>
-                    <TimeAgo timestamp={post.date} />
+                    <div className="postDetails">
+                        <PostAuthor userId={post.userId} />
+                        <TimeAgo timestamp={post.date} />
+                    </div>
                 </article>
             )
         })

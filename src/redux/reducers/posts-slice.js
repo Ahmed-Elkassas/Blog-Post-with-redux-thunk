@@ -24,12 +24,13 @@ const postSlice = createSlice({
       reducer(state, action) {
         state.posts.push(action.payload);
       },
-      prepare(title, body) {
+      prepare(title, body, userId) {
         return {
           payload: {
             id: nanoid(),
             title,
             body,
+            userId,
             date: new Date().toISOString(),
           },
         };
