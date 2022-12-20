@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux'
 
-import PostAuthor from "../users/PostAuthor";
-import TimeAgo from "../TimeAgo";
+import {PostAuthor} from "../users/PostAuthor";
+import {TimeAgo} from "../TimeAgo";
 import { selectPostById } from '../../redux/reducers/posts-slice';
 
 

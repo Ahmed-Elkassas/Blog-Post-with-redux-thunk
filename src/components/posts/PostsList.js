@@ -8,6 +8,7 @@ import {
 } from "../../redux/reducers/posts-slice";
 import { TimeAgo } from "../TimeAgo";
 import { PostAuthor } from "../users/PostAuthor";
+import { Link } from "react-router-dom";
 
 export const PostsList = () => {
   const posts = useSelector(getAllPosts);
@@ -33,6 +34,7 @@ export const PostsList = () => {
           <h4>{post.title}</h4>
           <p>{post.body.substring(0, 100)}</p>
           <div className="postDetails">
+            <Link to={`post/${post.id}`}>View Post</Link>
             <PostAuthor userId={post.userId} />
             <TimeAgo timestamp={post.date} />
           </div>

@@ -69,3 +69,14 @@ form {
 .postDetails span {
   font-size: 1.2rem;
 }
+
+.postDetails a, 
+.postDetails a:visited {
+  margin-right: 0.5rem;
+  color: black;
+}
+
+.postDetails a:hover, 
+.postDetails a:focus {
+  color: hsla(0, 0%, 0%, 0.75);
+}

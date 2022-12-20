@@ -10,7 +10,7 @@ function App() {
       <Route index element={<PostsList />} />
       <Route  path='post' >
         <Route index element={<PostForm />} />
-        <Route path=":id" element={<SinglePost />} />
+        <Route path=":postId" element={<SinglePost />} />
       </Route>
     </Routes>
   );
