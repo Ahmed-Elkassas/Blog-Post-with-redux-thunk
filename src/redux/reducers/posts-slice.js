@@ -4,7 +4,6 @@ import { sub } from "date-fns";
 
 const POSTS_URL = 'https://jsonplaceholder.typicode.com/posts';
 
-
 const initialState = {
   posts: [],
   status: "idle",
@@ -24,12 +23,13 @@ const postSlice = createSlice({
       reducer(state, action) {
         state.posts.push(action.payload);
       },
-      prepare(title, body) {
+      prepare(title, body, userId) {
         return {
           payload: {
             id: nanoid(),
             title,
             body,
+            userId,
             date: new Date().toISOString(),
           },
         };
@@ -57,6 +57,9 @@ const postSlice = createSlice({
 export const getAllPosts = (state) => state.posts.posts;
 export const getPostsStatus = (state) => state.posts.status;
 export const getPostsError = (state) => state.posts.error;
+
+export const selectPostById = (state, postId) =>
+    state.posts.posts.find(post => post.id === postId);
 
 export const { addNewPost } = postSlice.actions;
 
