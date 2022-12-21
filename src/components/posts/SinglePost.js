@@ -26,7 +26,7 @@ export const SinglePost = () => {
             <h2>{post.title}</h2>
             <p>{post.body}</p>
             <p className="postDetails">
-                <Link to={`post/edit/${post.id}`}>Edit Post</Link>
+                <Link to={`/post/edit/${post.id}`}>Edit Post</Link>
                 <PostAuthor userId={post.userId} />
                 <TimeAgo timestamp={post.date} />
             </p>
