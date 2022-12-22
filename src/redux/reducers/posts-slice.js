@@ -17,6 +17,7 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
 
 export const updatePost = createAsyncThunk('post/updatePost', async (singlePost) => {
   const {id} = singlePost;
+  
   const response = await axios.put(`${POSTS_URL}/${id}`, singlePost);
   return response.data
 })

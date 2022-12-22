@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { PostForm } from "./components/posts/PostForm";
+import { PostsForm } from "./components/posts/PostsForm";
 import { PostsList } from "./components/posts/PostsList";
 import { SinglePost } from "./components/posts/SinglePost";
 import { EditPostForm } from "./components/posts/EditPostForm";
@@ -10,7 +10,7 @@ function App() {
     <Routes>
       <Route index element={<PostsList />} />
       <Route  path='post' >
-        <Route index element={<PostForm />} />
+        <Route index element={<PostsForm />} />
         <Route path=":postId" element={<SinglePost />} />
         <Route path="edit/:postId" element={<EditPostForm />} />
       </Route>

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addNewPost } from "../../redux/reducers/posts-slice";
 import { getAllUsers } from "../../redux/reducers/users-slice";
 
-export const PostForm = () => {
+export const PostsForm = () => {
   const dispatch = useDispatch();
 
   const users = useSelector(getAllUsers);
