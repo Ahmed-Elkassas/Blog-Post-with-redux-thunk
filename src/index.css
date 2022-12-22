@@ -12,8 +12,8 @@ html {
 
 body {
   min-height: 100vh;
+  font-family: 'Courier New', Courier, monospace  ;
   font-size: 1.5rem;
-  padding: 0 10% 10%;
 }
 
 input,
@@ -25,7 +25,7 @@ select {
 }
 
 main {
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
 }
 
@@ -73,10 +73,37 @@ form {
 .postDetails a, 
 .postDetails a:visited {
   margin-right: 0.5rem;
-  color: black;
+  color: rgb(22, 110, 103);
+  font-weight: 300;
 }
 
 .postDetails a:hover, 
 .postDetails a:focus {
-  color: hsla(0, 0%, 0%, 0.75);
+  color: rgb(41, 170, 159);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgb(39, 156, 160);
+  color: #fff;
+}
+.header h2 {
+  margin-bottom: 0;
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.header a:hover {
+  color:rgb(119, 22, 111)
+}
+.header a:last-of-type {
+  margin-left: 1.3rem;
 }
