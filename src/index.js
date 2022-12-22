@@ -6,7 +6,9 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import { fetchUsers } from './redux/reducers/users-slice';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { fetchPosts } from './redux/reducers/posts-slice';
 
+store.dispatch(fetchPosts())
 store.dispatch(fetchUsers());
 
 ReactDOM.render(
