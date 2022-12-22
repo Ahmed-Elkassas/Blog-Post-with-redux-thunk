@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectPostById, updatePost } from "../../redux/reducers/posts-slice";
+import { deletePost, selectPostById, updatePost } from "../../redux/reducers/posts-slice";
 import { getAllUsers } from "../../redux/reducers/users-slice";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -58,6 +58,18 @@ export const EditPostForm = () => {
     }
   };
 
+  const onDeletePost = () => {
+    try {
+      setRequestStatus("pending");
+      dispatch(deletePost({ id: post.id}));
+      navigate(`/`);
+    } catch (error) {
+      alert(error);
+    } finally {
+      setRequestStatus("idle");
+    }
+  }
+
   const usersOptions = users.map((user) => (
     <option key={user.id} value={user.id}>
       {user.name}
@@ -95,6 +107,7 @@ export const EditPostForm = () => {
         >
           Save Post
         </button>
+        <button type="button" className="deleteBtn" onClick={onDeletePost}>Delete</button>
       </form>
     </section>
   );

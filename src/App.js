@@ -8,7 +8,7 @@ import { Layout } from "./components/UI/Layout";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout />} >
         <Route index element={<PostsList />} />
         <Route path="post">
           <Route index element={<PostsForm />} />

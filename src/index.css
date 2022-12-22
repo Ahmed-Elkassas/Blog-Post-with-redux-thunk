@@ -99,11 +99,22 @@ form {
   text-decoration: none;
   color: #fff;
   font-size: 1.1rem;
-  letter-spacing: 1px;
+  letter-spacing: 1px;  
 }
 .header a:hover {
   color:rgb(119, 22, 111)
 }
 .header a:last-of-type {
   margin-left: 1.3rem;
+}
+
+/* Edit post form */
+.deleteBtn {
+  background-color: rgb(226, 11, 11);
+  color: #fff;
+  border: none;
+  padding: 5px 0;
+}
+.deleteBtn:hover {
+  background-color: rgb(131, 7, 7);
 }
